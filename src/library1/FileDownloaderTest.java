@@ -14,4 +14,10 @@ public class FileDownloaderTest {
 		File file = new File("C:\\aaa\\file.jpg");
 		Assert.assertTrue(file.exists());
 	}
+	
+	@Test(expected=IOException.class)
+	public void shouldthrowIOException_whenDownloadFileInvoked_AndUrlAddressDidNotContainsFIle() throws IOException{
+		FileDownloader.downloadFile("http://somecontent", "C:\\aaa\\file");
+	}
+
 }

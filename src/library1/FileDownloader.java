@@ -15,7 +15,7 @@ public class FileDownloader {
 		
 		URL website = new URL(sourcePath);
 		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
-		FileOutputStream fos = new FileOutputStream(destinationPath + fileExtension);
+		FileOutputStream fos = new FileOutputStream(destinationPath +"."+ fileExtension);
 		fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
 		fos.close();
 	}
